@@ -419,7 +419,7 @@ class Robot
       secure: true
       saveUninitialized: true
       resave: true
-	})
+    })
 
     app.use express.basicAuth user, pass if user and pass
     app.use express.query()
