@@ -400,7 +400,7 @@ class Robot
 
     express = require 'express'
     multipart = require 'connect-multiparty'
-    sessions = require 'express-sessions'
+    sessions = require 'express-session'
     RedisStore = require('connect-redis')(sessions)
     cookieParser = require "cookie-parser"
 
