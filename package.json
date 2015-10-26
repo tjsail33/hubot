@@ -20,7 +20,10 @@
     "cline": "^0.8.2",
     "coffee-script": "1.6.3",
     "connect-multiparty": "^1.2.5",
+    "connect-redis": "^3.0.1",
+    "cookie-parser": "^1.4.0",
     "express": "3.18.1",
+    "express-sessions": "^1.0.5",
     "log": "1.4.0",
     "optparse": "1.0.4",
     "scoped-http-client": "0.11.0"

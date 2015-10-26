@@ -400,12 +400,26 @@ class Robot
 
     express = require 'express'
     multipart = require 'connect-multiparty'
+    sessions = require 'express-sessions'
+    RedisStore = require('connect-redis')(sessions)
+    cookieParser = require "cookie-parser"
 
     app = express()
 
     app.use (req, res, next) =>
       res.setHeader "X-Powered-By", "hubot/#{@name}"
       next()
+    
+    redisUrl = process.env.REDIS_URL or process.env.REDISTOGO_URL or process.env.REDISCLOUD_URL
+    
+    app.use cookieParser
+    app.use sessions({ 
+		store: new RedisStore({url:process.env.REDISTOGO_URL})
+		secret:'keyboard cat'
+		secure: true
+		saveUninitialized: true
+		resave: true
+	})
 
     app.use express.basicAuth user, pass if user and pass
     app.use express.query()
