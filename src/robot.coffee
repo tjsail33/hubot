@@ -414,11 +414,11 @@ class Robot
     
     app.use cookieParser
     app.use sessions({ 
-		store: new RedisStore({url:process.env.REDISTOGO_URL})
-		secret:'keyboard cat'
-		secure: true
-		saveUninitialized: true
-		resave: true
+      store: new RedisStore({url:process.env.REDISTOGO_URL})
+      secret:'keyboard cat'
+      secure: true
+      saveUninitialized: true
+      resave: true
 	})
 
     app.use express.basicAuth user, pass if user and pass
